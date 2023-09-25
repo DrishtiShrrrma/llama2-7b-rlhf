@@ -8,6 +8,9 @@ While this method works, it's not optimal. Here's why:
 2. **Wasted Token Capacity:** Especially in situations where many sequences are much shorter than the model's maximum context size, a lot of the model's processing capacity is wasted on padding tokens.
 
 # Packing to the Rescue
+
+![image](https://github.com/DrishtiShrrrma/llama2-7b-rlhf/assets/129742046/970ab2d6-3d57-4876-9820-256acd745f9d)
+
 The "packing" technique aims to address these inefficiencies. Here's how it works:
 
 1. **Concatenation:** Multiple text sequences are concatenated end-to-end, with each sequence separated by a special token, typically the "End Of Sentence" (EOS) token. This creates a long, continuous sequence of meaningful tokens without gaps or padding.
@@ -21,4 +24,4 @@ The "packing" technique aims to address these inefficiencies. Here's how it work
 
 2. **Better Utilization:** The model's token processing capacity is better utilized since it's focusing only on meaningful tokens and not wasting computations on padding.
 
-Consistent Sequence Length: Each sequence fed to the model during training is of consistent length, simplifying certain aspects of the training pipeline.
+3. **Consistent Sequence Length:** Each sequence fed to the model during training is of consistent length, simplifying certain aspects of the training pipeline.
